@@ -63,22 +63,27 @@
         </div>
         <div class="row">
           <div class="col-md-7 mx-auto">
-            <form>
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Nama Lengkap" required>
-              </div>
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Kelas" required>
-              </div>
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Nomor Induk Siswa (NIS)" required>
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" rows="3" placeholder="Alamat" required></textarea>
-              </div>
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="No Telpon" required>
-              </div>
+            <form name = "Pendaftaran-Anggota">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
+                    </div> 
+                    <div class="mb-3">
+                        <label for="class" class="form-label">Kelas</label>
+                        <input type="text" class="form-control" id="class" aria-describedby="class" name="class" />
+                    </div> 
+                    <div class="mb-3">
+                        <label for="nis" class="form-label">Nomor Induk Siswa (NIS)</label>
+                        <input type="text" class="form-control" id="nis" aria-describedby="nis" name="nis" />
+                    </div> 
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Alamat</label>
+                        <input type="text" class="form-control" id="address" aria-describedby="address" name="address" />
+                    </div> 
+                    <div class="mb-3">
+                        <label for="notelp" class="form-label">No Telepon</label>
+                        <input type="text" class="form-control" id="notelp" aria-describedby="notelp" name="notelp" />
+                    </div> 
               <button type="submit" class="btn bg-dark text-white w-100">Daftar</button>
             </form>
           </div>
