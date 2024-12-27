@@ -85,6 +85,17 @@
         </div>
       </div>
     </section>
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxUOMcXbjLqeofIx5zU_qAeyuix0IOgDo9JtOGyWmVEe71S7fMA79-AFYYPz0TmRQs/exec'
+  const form = document.forms['Pendaftaran-Anggota']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 
     <!-- Koleksi Buku-->
     <section id="Koleksi_Buku" class="Koleksi">
@@ -178,15 +189,3 @@
     </footer>
   </body>
 </html>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxUOMcXbjLqeofIx5zU_qAeyuix0IOgDo9JtOGyWmVEe71S7fMA79-AFYYPz0TmRQs/exec'
-  const form = document.forms['Pendaftaran-Anggota']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
