@@ -194,3 +194,33 @@
     </footer>
   </body>
 </html>
+<script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxUOMcXbjLqeofIx5zU_qAeyuix0IOgDo9JtOGyWmVEe71S7fMA79-AFYYPz0TmRQs/exec';
+      const form = document.forms["Pendaftaran-Anggota"];
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // Mencegah reload halaman
+
+        const submitButton = form.querySelector("[type='submit']");
+        submitButton.disabled = true; // Menonaktifkan tombol saat proses berlangsung
+        submitButton.textContent = "Loading..."; // Menampilkan indikator loading
+
+        try {
+          const response = await fetch(scriptURL, { method: "POST", body: new FormData(form) });
+          if (response.ok) {
+            console.log("Success!", response);
+            alert("Form submitted successfully!");
+            form.reset(); // Mengosongkan form setelah berhasil dikirim
+          } else {
+            console.error("Error!", response.statusText);
+            alert("Submission failed. Please try again.");
+          }
+        } catch (error) {
+          console.error("Error!", error.message);
+          alert("An error occurred: " + error.message);
+        } finally {
+          submitButton.disabled = false; // Mengaktifkan kembali tombol
+          submitButton.textContent = "Submit"; // Mengembalikan teks tombol
+        }
+      });
+
